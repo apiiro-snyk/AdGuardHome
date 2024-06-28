@@ -82,21 +82,21 @@ type Persistent struct {
 	Upstreams []string
 
 	// IPs is a list of IP addresses that identify the client.  The client must
-	// have at least one ID [Persistent.IDsLen].
+	// have at least one ID (IP, subnet, MAC, or ClientID).
 	IPs []netip.Addr
 
 	// Subnets identifying the client.  The client must have at least one ID
-	// [Persistent.IDsLen].
+	// (IP, subnet, MAC, or ClientID).
 	//
 	// TODO(s.chzhen):  Use netutil.Prefix.
 	Subnets []netip.Prefix
 
-	// MACs identifying the client.  The client must have at least one ID
-	// [Persistent.IDsLen].
+	// MACs identifying the client.  The client must have at least one ID (IP,
+	// subnet, MAC, or ClientID).
 	MACs []net.HardwareAddr
 
 	// ClientIDs identifying the client.  The client must have at least one ID
-	// [Persistent.IDsLen].
+	// (IP, subnet, MAC, or ClientID).
 	ClientIDs []string
 
 	// UID is the unique identifier of the persistent client.

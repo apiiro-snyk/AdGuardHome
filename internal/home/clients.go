@@ -348,7 +348,7 @@ func (clients *clientsContainer) periodicUpdate() {
 
 // clientSource checks if client with this IP address already exists and returns
 // the source which updated it last.  It returns [client.SourceNone] if the
-// client doesn't exist.
+// client doesn't exist.  Note that it is only used in tests.
 func (clients *clientsContainer) clientSource(ip netip.Addr) (src client.Source) {
 	clients.lock.Lock()
 	defer clients.lock.Unlock()

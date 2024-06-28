@@ -227,6 +227,8 @@ func (s *Storage) CloseUpstreams() (err error) {
 
 // ClientRuntime returns a copy of the saved runtime client by ip.  If no such
 // client exists, returns nil.
+//
+// TODO(s.chzhen):  Use it.
 func (s *Storage) ClientRuntime(ip netip.Addr) (rc *Runtime) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -236,6 +238,8 @@ func (s *Storage) ClientRuntime(ip netip.Addr) (rc *Runtime) {
 
 // AddRuntime saves the runtime client information in the storage.  IP address
 // of a client must be unique.  rc must not be nil.
+//
+// TODO(s.chzhen):  Use it.
 func (s *Storage) AddRuntime(rc *Runtime) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -244,6 +248,8 @@ func (s *Storage) AddRuntime(rc *Runtime) {
 }
 
 // SizeRuntime returns the number of the runtime clients.
+//
+// TODO(s.chzhen):  Use it.
 func (s *Storage) SizeRuntime() (n int) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -252,6 +258,8 @@ func (s *Storage) SizeRuntime() (n int) {
 }
 
 // RangeRuntime calls f for each runtime client in an undefined order.
+//
+// TODO(s.chzhen):  Use it.
 func (s *Storage) RangeRuntime(f func(rc *Runtime) (cont bool)) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -260,6 +268,8 @@ func (s *Storage) RangeRuntime(f func(rc *Runtime) (cont bool)) {
 }
 
 // DeleteRuntime removes the runtime client by ip.
+//
+// TODO(s.chzhen):  Use it.
 func (s *Storage) DeleteRuntime(ip netip.Addr) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -269,6 +279,8 @@ func (s *Storage) DeleteRuntime(ip netip.Addr) {
 
 // DeleteBySource removes all runtime clients that have information only from
 // the specified source and returns the number of removed clients.
+//
+// TODO(s.chzhen):  Use it.
 func (s *Storage) DeleteBySource(src Source) (n int) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
